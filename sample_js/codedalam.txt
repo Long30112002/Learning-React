@@ -1,0 +1,155 @@
+<!-- <body>
+    <div id="box">
+        <h2>Nhập vào sinh viên</h2>
+        <input style="margin-bottom: 3px;" type="text" name="" id="ten" placeholder="Nhập vào tên">
+        <br>
+        <input style="margin-bottom: 3px;" type="text" name="" id="tuoi" placeholder="Nhập vào tên">
+        <br>
+        <input style="margin-bottom: 3px;" type="text" name="" id="diachi" placeholder="Nhập vào tên">
+        <br>
+        <button onclick="nhapThongTin()">Xác nhận</button>
+        <p id="thongtin"></p>
+    </div>
+
+    <h1>Thông tin sinh viên</h1>
+    <p id="info"></p>
+
+</body>
+<script>
+    let sinhvien = {
+        ten: "Hoàng Tuấn Long",
+        tuoi: "24",
+        diachi: "Biên Hòa"
+    }
+
+    document.getElementById("info").innerHTML = `
+    Tên: ${sinhvien.ten}<br>
+    Tuổi: ${sinhvien.tuoi}<br>
+    Địa chỉ: ${sinhvien.diachi}<br>
+    `;
+
+    // sinhvien.email = "nguyenvana@example.com";
+    // sinhvien.tuoi = 21;
+    // console.log("Thông tin sinh viên cập nhật", sinhvien);
+    
+    let stt = 0;
+
+    function nhapThongTin()
+    {
+        let ten = document.getElementById("ten").value;
+        let tuoi = document.getElementById("tuoi").value;
+        let diachi = document.getElementById("diachi").value;
+
+        let sinhvien = {
+            ten: ten,
+            tuoi: tuoi,
+            diachi: diachi
+        }
+
+        // console.log(ten, tuoi, diachi);
+        if(ten == "" || tuoi == "" || diachi == ""){
+            document.getElementById("thongtin").innerText = "Vui lòng nhập đầy đủ thông tin"
+        }else{
+            stt++;
+            document.getElementById("info").innerHTML = `
+            STT: ${stt}<br>
+            Tên: ${sinhvien.ten}<br>
+            Tuổi: ${sinhvien.tuoi}<br>
+            Địa chỉ: ${sinhvien.diachi}<br>
+            `;
+        }
+    }    
+    
+</script> -->
+
+<!-- <body>
+    <div id="box">
+        <h2>Tính tuổi của bạn</h2>
+        <input type="text" name="" id="namsinh" placeholder="Nhập năm sinh">
+        <br>
+        <button onclick="tinhTuoi()">Tính tuổi</button>
+        <p id="ketqua1"></p>
+    </div>
+
+    <div id="box">
+        <h2>Kiểm tra số chẳn/lẻ</h2>
+        <input type="text" name="" id="so" placeholder="Nhập vào số">
+        <br>
+        <button onclick="kiemtraChanLe()">Kiểm tra</button>
+        <p id="ketqua2"></p>
+    </div>
+
+    
+    <div id="box">
+        <h2>Tính tổng mảng</h2>
+        <input style="width: 210px;" type="text" name="" id="mang" placeholder="Nhập vào số cách nhau bằng dấu, ">
+        <br>
+        <button onclick="sumArray()">Tính tổng</button>
+        <p id="ketqua3"></p>
+    </div>
+
+        <div id="box">
+        <h2>Tìm số lớn nhất trong mảng</h2>
+        <input style="width: 210px;" type="text" name="" id="mang2" placeholder="Nhập vào số cách nhau bằng dấu, ">
+        <br>
+        <button onclick="findMax()">Tìm số lớn nhất</button>
+        <p id="ketqua4"></p>
+    </div>
+</body>
+<script>
+    function tinhTuoi(){
+        let namsinh = document.getElementById("namsinh").value;
+
+        if(namsinh == ""){
+            document.getElementById("ketqua1").innerText = "Vui lòng nhập vào năm sinh của bạn"
+            return;
+        }
+
+        let namhientai = new Date().getFullYear();
+        let tuoi = namhientai - namsinh;
+
+        document.getElementById("ketqua1").innerText = "Tuổi hiện tại của bạn là: " + tuoi;
+    }
+
+    function kiemtraChanLe(){
+        let so = document.getElementById("so").value;
+        let ketqua = document.getElementById("ketqua2");
+        if (so == ""){
+            ketqua.innerText = "Vui lòng nhập vào số"
+            ketqua.style.color = "red";
+        }else if(so % 2 != 0){
+            ketqua.innerText = "Đây là số lẻ";
+            ketqua.style.color = "black";
+        }else if(so % 2 == 0){
+            ketqua.innerText = "Đây là số chẳn";
+            ketqua.style.color = "black";
+        }
+        // console.log(so);
+    }
+
+    function sumArray(){
+        let mang = document.getElementById("mang").value;
+        let numbers = mang.split(',').map(Number);
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++){
+            if(!isNaN(numbers[i])){
+                sum += numbers[i];
+            }
+        }
+        document.getElementById("ketqua3").innerText = "Kết quả: " +sum; 
+    }   
+
+    function findMax(){
+        let mang = document.getElementById("mang2").value;
+        let numbers = mang.split(',').map(Number);
+        var max = numbers[0];
+        for (let i = 0; i < numbers.length; i++){
+            if(numbers[i] > max){
+                max = numbers[i];
+                console.log(max);
+            }
+        }
+        document.getElementById("ketqua4").innerText = "Kết quả: " +max; 
+    }
+
+</script> -->

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        /* display: flex; */
+        width: 600px;
+        border: 1px solid black;
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    .box h1{
+        /* border: 1px solid black; */
+        text-align: center;
+    }
+
+    .form{
+        /* border: 1px solid black; */
+        justify-self: center;
+    }
+
+    .form p {
+        margin: 10px 0;
+    }
+
+    input{
+        padding: 5px;
+        width: 90%;
+    }
+
+    .btn_submit{
+        /* border: 1px solid black; */
+        text-align: center;
+    }
+
+    .error {
+        color: red;
+        font-size: 10px;
+    }
+</style>
+<body>
+    <form onsubmit="kiemtraTT(event)">
+        <div class="box">
+            <h1>Form kiểm tra dữ liệu</h1>
+            <div class="form">
+                <p>Name: <input type="text" id="name"></p>
+                <p class="error" id="check_name"></p>
+
+                <p>Email: <input type="text" id="email"></p>
+                <p class="error" id="check_email"></p>
+
+                <p>Password: <input type="password" id="password"></p>
+                <p class="error" id="check_password"></p>
+            </div>
+            <div class="btn_submit">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+
+        <div class="box">
+            <h1>Hiển thị thông tin</h1>
+            <div class="form">
+                <p id="info"></p>
+            </div>
+        </div>
+    </form>
+</body>
+
+<script>
+    function kiemtraTT(event){
+        event.preventDefault(); // chặn reload form
+        let name = document.getElementById("name").value.trim();
+        let email  = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+
+        document.getElementById("check_name").innerText = "";
+        document.getElementById("check_email").innerText = "";
+        document.getElementById("check_password").innerText = "";
+
+        let valid = true;
+
+        let info = {
+            username: name, // key = name, value = biến username
+            email: email,
+            password: password
+        }
+
+        if(name === ""){
+            document.getElementById("check_name").innerText = "Vui lòng nhập vào họ tên";
+            let valid = false;
+        }else if(email == "" || !email.includes("@")){
+            document.getElementById("check_email").innerText = "Email không hợp lệ";
+            let valid = false;
+        }else if(password == "" || password.length < 6){
+            document.getElementById("check_password").innerText = "Password không hợp lệ";
+            let valid = false;
+        }else if(valid){
+            alert("Gửi form thành công");
+            // event.target.submit();
+        }
+
+        document.getElementById("info").innerHTML = `
+        Name: ${info.username}<br>
+        Email: ${info.email}<br>
+        Password: ${info.password}<br>
+        `;
+    }
+</script>
+</html>
+
