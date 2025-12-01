@@ -1,0 +1,110 @@
+.about-section {
+  padding: 60px 60px;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+}
+
+/* Tiêu đề */
+.subtitle {
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Đoạn intro */
+.intro {
+  line-height: 1.8;
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Service grid */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.service-box {
+  padding: 40px 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 4px solid transparent;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+}
+
+/* icons */
+.icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+/* label */
+.label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Colors bottom border */
+.blue {
+  border-bottom-color: #4285f4;
+}
+
+.red {
+  border-bottom-color: #ff4d4f;
+}
+
+.yellow {
+  border-bottom-color: #f1c40f;
+}
+
+.purple {
+  border-bottom-color: #9b59b6;
+}
+
+/* YELLOW BANNER */
+.about-banner {
+  margin-top: 60px;
+  background: #f3c046;
+  padding: 40px 50px;
+  border-radius: 4px;
+}
+
+.about-banner h1 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.hire-btn {
+  border: 1px solid #333;
+  background: transparent;
+  padding: 10px 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.hire-btn:hover {
+  background: #333;
+  color: #fff;
+}

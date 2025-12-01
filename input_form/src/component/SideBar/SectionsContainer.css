@@ -1,0 +1,12 @@
+.content {
+  width: 82%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.section {
+  height: 100vh;
+  margin-left: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 32px;
+}
